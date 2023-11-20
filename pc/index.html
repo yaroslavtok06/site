@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/zero.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/scripts/form.js"></script>
+    <script src="/scripts/main.js"></script>
+    <title>FixPC | Компютерный мастер Вильнюс</title>
+</head>
+<body>
+
+    <div id="contactsModal" class="modal-container">
+        <div class="modal-content" id="contactContent">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Контактная информация</h2>
+            <p>Телефон: +37069422684 (Ярослав)</p>
+            <p>Email: yaroslavtok.work@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <img src="/images/logo.svg" alt="Logo">
+                FixPC
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li class="nav-list"><a href="/files/price.xlsx" download="price.xlsx" class="nav-link">Услуги</a></li>
+                    <li class="nav-list"><a href="#" class="nav-link open-contacts-link" onclick="openModal()">Контакты</a></li>
+                    <li class="nav-list"><a href="#" class="nav-link btn open-modal">Оставить заявку</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="content">
+            <div class="top-text">
+                Компютерный мастер в <p>Вильнюсе</p>
+            </div>
+            <div class="system">
+                <div class="windows os">
+                    <img src="/images/windows.svg" alt="">
+                    Windows
+                </div>
+                <div class="macos os">
+                    <img src="/images/macos.svg" alt="">
+                    Mac OS
+                </div>
+                <div class="linux os">
+                    <img src="/images/linux.svg" alt="">
+                    Linux
+                </div>
+            </div>
+            <div class="rates">Более <b>1000</b> довольных клиентов по всему Вильнюсу<br>Оценка клиентов: 4.8 из 5.0</div>
+            <div class="call-back">
+                <a href="#" class="call-link open-modal2">Вызвать мастера <img src="/images/call.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            
+            <form id="feedbackForm">
+
+                <div id="message"></div>
+
+                <input type="hidden" id="requestNumber" name="requestNumber">
+
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" placeholder="Alex" required>
+    
+                <label for="problem">Коротко опишите проблему:</label>
+                <textarea name="problem" id="problem"></textarea>
+    
+                <label for="phone">Ваш номер телефона:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+370" required>
+    
+
+                <button type="button" class="form-btn" onclick="submitForm()">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
